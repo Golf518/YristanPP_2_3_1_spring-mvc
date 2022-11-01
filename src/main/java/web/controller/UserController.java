@@ -20,8 +20,8 @@ public class UserController {
     @RequestMapping("/")
     public String printUsers(Model model) {
 
-        List<User> allUsers = userService.getAllUser();
-        model.addAttribute("allUs", allUsers);
+        List<User> users = userService.getAllUser();
+        model.addAttribute("users", users);
         return "users";
     }
 

@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html"
-      xmlns="http://www.w3.org/1999/html"
-      lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit user</title>
+    <title>Update user</title>
 </head>
 <body>
-<h1>Edit user</h1>
+<h1>Update user</h1>
 <form th:method="PATCH" th:action="@{/edit}" th:object="${user}">
     <table>
         <tr>
@@ -36,12 +34,10 @@
             </td>
         </tr>
         <br>
-            <td>
-                <input type="submit" class="buttonEdit" value="Edit user"/>
-            </td>
+        <td>
+            <input type="submit" class="buttonEdit" value="Update"/>
+        </td>
         </tr>
-
-
     </table>
 </form>
 </body>

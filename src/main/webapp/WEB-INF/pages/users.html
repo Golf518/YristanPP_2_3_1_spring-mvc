@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
-
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title></title>
 </head>
 <body>
-<h2>All users</h2>
+<h2>Users</h2>
 <br>
 <div>
     <table>
@@ -16,25 +16,21 @@
             <th>Lastname</th>
             <th>email</th>
             <th>Update/Delete</th>
-
         </tr>
-        <tr th:each ="user : ${allUs}">
+        <tr th:each ="user : ${users}">
             <td th:utext="${user.getId()}" ></td>
             <td th:utext="${user.getName()}"></td>
             <td th:utext="${user.getLastName()}"></td>
             <td th:utext="${user.getEmail()}"></td>
             <td>
-<!--                    <a th:href="@{'/user/edit/' + ${user.getId}}">Update</a>-->
-<!--                <a th:href="@{/edit/{id}(id=${user.getId})}">Update</a>-->
-                <a th:href="@{/updateUsers(userId=${user.getId})}">Update</a>
-                <a th:href="@{/deleteUsers(userId=${user.getId})}">Delete</a>
+                <a th:href="@{/edit/{id}(id=${user.getId})}">Update /</a>
+                <a th:href="@{/deleteUsers(userId=${user.getId})}"> Delete</a>
             </td>
         </tr>
     </table>
     <br>
-    <input type = "button" value ="Add"
-           onclick = "window.location.href = 'addNewUsers'">
+    <input type="button" value="Add user"
+           onclick="window.location.href = 'addNewUsers'">
 </div>
-
 </body>
 </html>
