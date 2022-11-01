@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
@@ -15,19 +15,25 @@
             <th>Name</th>
             <th>Lastname</th>
             <th>email</th>
+            <th>Update/Delete</th>
 
         </tr>
-        <tr th:each ="user : ${users}">
+        <tr th:each ="user : ${allUs}">
             <td th:utext="${user.getId()}" ></td>
             <td th:utext="${user.getName()}"></td>
             <td th:utext="${user.getLastName()}"></td>
             <td th:utext="${user.getEmail()}"></td>
             <td>
-                <a th:href="@{/edit/{id}(id=${user.getId})}">Update</a>
+<!--                    <a th:href="@{'/user/edit/' + ${user.getId}}">Update</a>-->
+<!--                <a th:href="@{/edit/{id}(id=${user.getId})}">Update</a>-->
+                <a th:href="@{/updateUsers(userId=${user.getId})}">Update</a>
                 <a th:href="@{/deleteUsers(userId=${user.getId})}">Delete</a>
             </td>
         </tr>
     </table>
+    <br>
+    <input type = "button" value ="Add"
+           onclick = "window.location.href = 'addNewUsers'">
 </div>
 
 </body>
